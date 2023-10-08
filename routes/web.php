@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MessagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 // root
-Route::get('/', 'MessagesController@index');
+Route::get('/', [MessagesController::class, 'index']);
 
 // 参照
-Route::get('messages', 'MessagesController@index')->name('messages.index');
-Route::get('messages/create', 'MessagesController@create')->name('messages.create');
-Route::get('messages/{id}/edit', 'MessagesController@edit')->name('messages.edit');
+Route::get('messages', [MessagesController::class, 'index'])->name('messages.index');
+Route::get('messages/create', [MessagesController::class, 'create'])->name('messages.create');
+Route::get('messages/{id}/edit', [MessagesController::class, 'edit'])->name('messages.edit');
 
 // CRUD
-Route::get('messages/{id}', 'MessagesController@show');
-Route::post('messages', 'MessagesController@store');
-Route::put('messages/{id}', 'MessagesController@update');
-Route::delete('messages/{id}', 'MessagesController@destroy');
+Route::get('messages/{id}', [MessagesController::class, 'show']);
+Route::post('messages', [MessagesController::class, 'store']);
+Route::put('messages/{id}', [MessagesController::class, 'update']);
+Route::delete('messages/{id}', [MessagesController::class, 'destroy']);
