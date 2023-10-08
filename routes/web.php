@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 // root
-Route::get('/', 'MessageController@index');
+Route::get('/', 'MessagesController@index');
 
 // 参照
-Route::get('messages', 'MessageController@index')->name('messages.index');
-Route::get('messages/create', 'MessageController@create')->name('messages.create');
-Route::get('message/{id}/edit', 'MessageController@edit')->name('messages.edit');
+Route::get('messages', 'MessagesController@index')->name('messages.index');
+Route::get('messages/create', 'MessagesController@create')->name('messages.create');
+Route::get('messages/{id}/edit', 'MessagesController@edit')->name('messages.edit');
 
 // CRUD
-Route::get('messages/{id}', 'MessageController@show');
-Route::post('messages', 'MessageController@store');
-Route::put('messages/{id}', 'MessageController@update');
-Route::delete('messages/{id}', 'MessageController@destroy');
+Route::get('messages/{id}', 'MessagesController@show');
+Route::post('messages', 'MessagesController@store');
+Route::put('messages/{id}', 'MessagesController@update');
+Route::delete('messages/{id}', 'MessagesController@destroy');
