@@ -49,7 +49,11 @@ class MessagesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $message = Message::find($id);
+
+        return view('messages.show', [
+            'message' => $message,
+        ]);
     }
 
     /**

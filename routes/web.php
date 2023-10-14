@@ -23,7 +23,7 @@ Route::get('messages/create', [MessagesController::class, 'create'])->name('mess
 Route::get('messages/{id}/edit', [MessagesController::class, 'edit'])->name('messages.edit');
 
 // CRUD
-Route::get('messages/{id}', [MessagesController::class, 'show']);
+Route::get('messages/{id}', [MessagesController::class, 'show'])->name('messages.show');
 Route::post('messages', [MessagesController::class, 'store'])->name('messages.store');
 Route::put('messages/{id}', [MessagesController::class, 'update']);
 Route::delete('messages/{id}', [MessagesController::class, 'destroy']);
