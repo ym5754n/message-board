@@ -10,6 +10,10 @@
             <td>{{ $message->id }}</td>
         </tr>
         <tr>
+            <th>title</th>
+            <td>{{ $message->title }}</td>
+        </tr>
+        <tr>
             <th>message</th>
             <td>{{ $message->content }}</td>
         </tr>

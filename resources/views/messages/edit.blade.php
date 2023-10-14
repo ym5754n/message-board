@@ -8,6 +8,10 @@
         <div class="col-6">
             {!! Form::model($message, ['route' => ['messages.update', $message->id], 'method' => 'put']) !!}
                 <div class="form-group">
+                    {!! Form::label('title', 'title: ') !!}
+                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
                     {!! Form::label('content', 'message: ') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>

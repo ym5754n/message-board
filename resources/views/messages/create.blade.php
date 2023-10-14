@@ -8,7 +8,11 @@
         <div class="col-6">
             {!! Form::model($message, ['route' => 'messages.store']) !!}
                 <div class="form-group">
-                    {!! Form::label('content', 'Message: ') !!}
+                    {!! Form::label('title', 'title: ') !!}
+                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('content', 'message: ') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
                 </div>
 
