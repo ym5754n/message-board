@@ -6,19 +6,19 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($message, ['route' => 'messages.store']) !!}
+            <form action="{{ route('messages.store') }}", method="POST">
+                @csrf
                 <div class="form-group">
-                    {!! Form::label('title', 'title: ') !!}
-                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                    <label for="title">title:</label>
+                    <input class="form-control" name="title" type="text" id="title">
                 </div>
                 <div class="form-group">
-                    {!! Form::label('content', 'message: ') !!}
-                    {!! Form::text('content', null, ['class' => 'form-control']) !!}
+                    <label for="content">message:</label>
+                    <input class="form-control" name="content" type="text" id="content">
                 </div>
 
-                {!! Form::submit('Post', ['class' => 'btn btn-primary']) !!}
-
-            {!! Form::close() !!}
+                <input class="btn btn-primary" type="submit" value="Post">
+            </form>
         </div>
     </div>
 

@@ -15,7 +15,7 @@
             <tbody>
                 @foreach ($messages as $message)
                 <tr>
-                    <td>{!! link_to_route('messages.show', $message->id, ['id' => $message->id]) !!}</td>
+                    <td><a href="{{ route('messages.show', ['id' => $message->id]) }}">{{ $message->id }}</a></td>
                     <td>{{ $message->title }}</td>
                     <td>{{ $message->content }}</td>
                 </tr>
@@ -26,6 +26,7 @@
 
     {{ $messages->links('pagination::bootstrap-4') }}
 
-    {!! link_to_route('messages.create', 'Create Message', [], ['class' => 'btn btn-primary']) !!}
+    <a class="btn btn-primary" href="{{ route('messages.create') }}">Create Message</a>
+
 
 @endsection

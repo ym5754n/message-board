@@ -19,10 +19,12 @@
         </tr>
     </table>
 
-    {!! link_to_route('messages.edit', 'Edit', ['id' => $message->id], ['class' => 'btn btn-light']) !!}
+    <a class="btn btn-light" href="{{ route('messages.edit', ['id' => $message->id]) }}">Edit</a>
 
-    {!! Form::model($message, ['route' => ['messages.destroy', $message->id], 'method' => 'delete']) !!}
-        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
+    <form action="{{ route('messages.destroy', ['id' => $message->id]) }}" method="POST">
+        @method('DELETE')
+        @csrf
+        <input type="submit" class="btn btn-danger" value="Delete">
+    </form>
     
 @endsection

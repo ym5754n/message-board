@@ -6,18 +6,20 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($message, ['route' => ['messages.update', $message->id], 'method' => 'put']) !!}
+            <form action="{{ route('messages.update', ['id' => $message->id]) }}", method="POST">
+                @method('PUT')
+                @csrf
                 <div class="form-group">
-                    {!! Form::label('title', 'title: ') !!}
-                    {!! Form::text('title', null, ['class' => 'form-control']) !!}
+                    <label for="title">title:</label>
+                    <input class="form-control" name="title" type="text" id="title" value="{{ $message->title }}">
                 </div>
                 <div class="form-group">
-                    {!! Form::label('content', 'message: ') !!}
-                    {!! Form::text('content', null, ['class' => 'form-control']) !!}
+                    <label for="content">message:</label>
+                    <input class="form-control" name="content" type="text" id="content" value="{{ $message->content }}">
                 </div>
 
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-            {!! Form::close() !!}
+                <input class="btn btn-primary" type="submit" value="Save">
+            </form>
         </div>
     </div>
 
