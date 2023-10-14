@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <h1>メッセージ一覧</h1>
+    <h1>messages</h1>
 
     @if (count($messages) > 0)
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>メッセージ</th>
+                    <th>message</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +23,6 @@
         </table>
     @endif
 
-    {!! link_to_route('messages.create', 'New Post', [], ['class' => 'btn btn-primary']) !!}
+    {!! link_to_route('messages.create', 'Create Message', [], ['class' => 'btn btn-primary']) !!}
 
 @endsection
