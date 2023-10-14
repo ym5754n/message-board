@@ -16,5 +16,9 @@
     </table>
 
     {!! link_to_route('messages.edit', 'Edit', ['id' => $message->id], ['class' => 'btn btn-light']) !!}
+
+    {!! Form::model($message, ['route' => ['messages.destroy', $message->id], 'method' => 'delete']) !!}
+        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+    {!! Form::close() !!}
     
 @endsection
