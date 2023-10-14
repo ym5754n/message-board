@@ -61,7 +61,11 @@ class MessagesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $message = Message::find($id);
+
+        return view('messages.edit', [
+            'message' => $message,
+        ]);
     }
 
     /**
@@ -69,7 +73,11 @@ class MessagesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $message = Message::find($id);
+        $message->content = $request->content;
+        $message->save();
+
+        return redirect('/');
     }
 
     /**

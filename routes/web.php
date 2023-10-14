@@ -25,5 +25,5 @@ Route::get('messages/{id}/edit', [MessagesController::class, 'edit'])->name('mes
 // CRUD
 Route::get('messages/{id}', [MessagesController::class, 'show'])->name('messages.show');
 Route::post('messages', [MessagesController::class, 'store'])->name('messages.store');
-Route::put('messages/{id}', [MessagesController::class, 'update']);
+Route::put('messages/{id}', [MessagesController::class, 'update'])->name('messages.update');
 Route::delete('messages/{id}', [MessagesController::class, 'destroy']);
